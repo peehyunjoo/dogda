@@ -79,12 +79,18 @@
 		<!-- CTA -->
 			<section id="cta" class="wrapper">
 				<div class="inner">
-					<h2>Login</h2>
-					<p>
-						<a href="https://kauth.kakao.com/oauth/authorize?client_id=448844327114515aa2e08f9cbf79a49a&redirect_uri=http://49.174.123.151:8000/&response_type=code">
-                    		<img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300"/>
-                		</a>
+					<p style="color:#F78181">
+						{% if request.session.id %}
+							{{ request.session.nickname }} 님 환영합니다.
 					</p>
+						{% else %}
+						<h2>Login</h2>
+						<p>
+							<a href="https://kauth.kakao.com/oauth/authorize?client_id=448844327114515aa2e08f9cbf79a49a&redirect_uri=http://49.174.123.151:8000/&response_type=code">
+								<img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300"/>
+							</a>
+						</p>
+					{% endif %}
 				</div>
 			</section>
 
